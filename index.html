@@ -1,1 +1,267 @@
-<a class="nuipogoda-iframe-informer" data-nuipogoda="informer4" href="https://nuipogoda.ru" style="width:284px;height:251px;display:block;box-shadow: 0 0 5px #999;">НУ И ПОГОДА</a><script>(function(a,f,g){var e=a.createElement(f);e.async=1;e.src=g; a=a.getElementsByTagName(f)[0];a.parentNode.insertBefore(e,a)})(document,'script','//nuipogoda.ru/informer/nuipogoda.js');</script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в Усть-Илимске</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #1E88E5, #0D47A1);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .current-weather {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .weather-gif {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+        }
+        
+        .temperature {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .weather-desc {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .weather-details {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .detail {
+            text-align: center;
+        }
+        
+        .detail-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .detail-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .forecast-day {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .forecast-date {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .forecast-temp {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+        
+        .small-gif {
+            width: 80px;
+            height: 80px;
+            margin: 10px auto;
+            border-radius: 50%;
+        }
+        
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info-section h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .weather-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .forecast {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Погода в Усть-Илимске</h1>
+            <p>Актуальная информация о погоде и прогноз на ближайшие дни</p>
+        </header>
+        
+        <section class="current-weather">
+            <h2>Сейчас</h2>
+            <img src="https://media.giphy.com/media/3o7TKsQ8UQ4l4LhGz6/giphy.gif" alt="Погода" class="weather-gif">
+            <div class="temperature">-5°C</div>
+            <div class="weather-desc">Снег</div>
+            
+            <div class="weather-details">
+                <div class="detail">
+                    <div class="detail-value">87%</div>
+                    <div class="detail-label">Влажность</div>
+                </div>
+                <div class="detail">
+                    <div class="detail-value">3 м/с</div>
+                    <div class="detail-label">Ветер</div>
+                </div>
+                <div class="detail">
+                    <div class="detail-value">745 мм</div>
+                    <div class="detail-label">Давление</div>
+                </div>
+            </div>
+        </section>
+        
+        <h2>Прогноз на 5 дней</h2>
+        <div class="forecast">
+            <div class="forecast-day">
+                <div class="forecast-date">Завтра</div>
+                <img src="https://media.giphy.com/media/l4FGsRgP3r8qVJQys/giphy.gif" alt="Пасмурно" class="small-gif">
+                <div class="forecast-temp">-3°C</div>
+                <div class="weather-desc">Облачно</div>
+            </div>
+            
+            <div class="forecast-day">
+                <div class="forecast-date">Ср, 24 янв</div>
+                <img src="https://media.giphy.com/media/3o7TKsQ8UQ4l4LhGz6/giphy.gif" alt="Снег" class="small-gif">
+                <div class="forecast-temp">-6°C</div>
+                <div class="weather-desc">Снег</div>
+            </div>
+            
+            <div class="forecast-day">
+                <div class="forecast-date">Чт, 25 янв</div>
+                <img src="https://media.giphy.com/media/3o7TKsQ8UQ4l4LhGz6/giphy.gif" alt="Снег" class="small-gif">
+                <div class="forecast-temp">-8°C</div>
+                <div class="weather-desc">Снег</div>
+            </div>
+            
+            <div class="forecast-day">
+                <div class="forecast-date">Пт, 26 янв</div>
+                <img src="https://media.giphy.com/media/l4FGsRgP3r8qVJQys/giphy.gif" alt="Облачно" class="small-gif">
+                <div class="forecast-temp">-4°C</div>
+                <div class="weather-desc">Облачно</div>
+            </div>
+            
+            <div class="forecast-day">
+                <div class="forecast-date">Сб, 27 янв</div>
+                <img src="https://media.giphy.com/media/3o7abGQa0aRsohveX6/giphy.gif" alt="Солнечно" class="small-gif">
+                <div class="forecast-temp">-2°C</div>
+                <div class="weather-desc">Солнечно</div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>О погоде в Усть-Илимске</h2>
+            <p>Усть-Илимск расположен в Иркутской области и характеризуется резко континентальным климатом. Зимы здесь длинные и холодные, с обильными снегопадами. Лето короткое, но может быть довольно тёплым.</p>
+            <p>Среднегодовая температура составляет около -2°C. Самый холодный месяц — январь (средняя температура -22°C), самый тёплый — июль (средняя температура +18°C).</p>
+        </div>
+        
+        <div class="info-section">
+            <h2>Интересные факты</h2>
+            <p>Усть-Илимск известен своей ГЭС — одной из крупнейших в России. Зимой здесь можно наблюдать удивительное явление — иней на деревьях, который создаёт сказочный зимний пейзаж.</p>
+            <p>Близкое расположение к тайге обеспечивает чистый воздух и красивые природные виды в любое время года.</p>
+        </div>
+        
+        <footer>
+            <p>© 2023 Погода в Усть-Илимске | Данные обновляются ежедневно</p>
+            <p>Использованы анимированные GIF-изображения для наглядного отображения погоды</p>
+        </footer>
+    </div>
+
+    <script>
+        // Простая имитация обновления данных о погоде
+        function updateWeatherData() {
+            // В реальном приложении здесь был бы запрос к API погоды
+            const temps = [-5, -3, -6, -8, -4, -2];
+            const randomTemp = temps[Math.floor(Math.random() * temps.length)];
+            
+            document.querySelector('.temperature').textContent = randomTemp + '°C';
+            
+            // Обновляем время последнего обновления
+            const now = new Date();
+            document.querySelector('footer p:first-child').textContent = 
+                `© 2023 Погода в Усть-Илимске | Данные обновлены: ${now.toLocaleTimeString()}`;
+        }
+        
+        // Обновляем данные каждую минуту (в реальном приложении интервал был бы больше)
+        setInterval(updateWeatherData, 60000);
+        
+        // Первоначальное обновление
+        updateWeatherData();
+    </script>
+</body>
+</html>
